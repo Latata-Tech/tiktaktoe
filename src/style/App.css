@@ -1,0 +1,31 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: #fff;
+    width: 212px;
+    height: 131px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+body {
+    background: #F9F9F9;
+    height: 100%;
+}
+
+.title-landing {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.second-landing {
+    font-size: 52px;
+    font-weight: bold;
+}
+
+.bg-main-color {
+    background-color: #F55078;
+}

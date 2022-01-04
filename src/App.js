@@ -1,9 +1,8 @@
+import Landing from "./page/Landing";
 
 function App() {
   return (
-    <div className="App">
-      <p>wkwkwkwk</p>
-    </div>
+    <Landing />
   );
 }
 
