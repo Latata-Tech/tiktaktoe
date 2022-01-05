@@ -1,10 +1,11 @@
 import React from 'react'
-import person from '../assets/person.svg'
 
 const XOComponent = (props) => {
+    let selected = props.pawn === props.title ? "border-4 border-black" : ""
+    let classStyle = "rounded-lg p-5 container-xo center " + selected
     return (
-        <div className="w-20 rounded-lg p-8 mx-auto container-xo float-left mr-10">
-            <img src={props.image} width="48px" alt={props.title}/>
+        <div onClick={() => props.event(props.title)} className={classStyle}>
+            <img src={props.image} width="48px" alt={props.title} style={{ marginLeft: "20%" }}/>
         </div>
     )
 }

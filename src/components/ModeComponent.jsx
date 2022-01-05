@@ -1,15 +1,17 @@
 import React from 'react'
 import person from '../assets/person.svg'
-const ModeComponent = () => {
+import people from '../assets/people.svg'
+const ModeComponent = (props) => {
+    let mode = props.mode
     return (
         <div>
             <span className="text-base">Click to change mode</span>
-            <button className="bg-main-color text-white w-full rounded-lg mt-2">
+            <button onClick={() => props.event(mode === 1 ? 2 : 1)} className="bg-main-color text-white w-full rounded-lg mt-2">
                 <div className="float-left">
-                    <img src={person}/>
+                    <img src={mode === 1 ? person : people} alt="icon"/>
                 </div>
                 <div className="text-left text-2xl mt-6 font-bold">
-                    VS Com
+                    {mode === 1 ? "1 Player" : "2 Player"}
                 </div>
             </button>
         </div>
