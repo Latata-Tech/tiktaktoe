@@ -5,6 +5,7 @@ import LogoComponent from "../components/LogoComponent";
 import BoardComponent from "../components/BoardComponent";
 import ScoreComponent from "../components/ScoreComponent";
 import ModeComponent from "../components/ModeComponent";
+import ModalComponent from "../components/ModalComponent";
 import XOComponent from "../components/XOComponent";
 import cross from '../assets/cross.svg'
 import circle from '../assets/elipse.svg'
@@ -13,6 +14,12 @@ const Play = () => {
     const [mode, setMode] = useState(1)
     const [turn, setTurn] = useState(1)
     const [pawn, setPawn] = useState('x')
+    const [pawnOnBoard, resetBoard] = useState([
+        [null, null, null],
+        [null, null, null],
+        [null, null, null]
+    ])
+    const [display, setDisplay] = useState('none')
 
     return (
         <div className="container mx-auto h-full max-h-full">
@@ -31,7 +38,7 @@ const Play = () => {
                     <div className="ml-28 mt-20">
                         <div className="grid grid-cols-1">
                             <div className="p-auto ml-28 mb-20">
-                                <BoardComponent event={setTurn} turn={turn}/>
+                                <BoardComponent event={setTurn} turn={turn} pawnOnBoard={pawnOnBoard} setDisPlay={setDisplay}/>
                             </div>
                             <div className="grid grid-cols-3 gap-3">
                                 <ScoreComponent status={"Player 1" + "(" + pawn + ")"} score={0}/>
@@ -42,6 +49,8 @@ const Play = () => {
                     </div>
                 </div>
             </div>
+
+            <ModalComponent display={display}/>
         </div>
     )
 }

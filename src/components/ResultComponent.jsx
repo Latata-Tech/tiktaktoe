@@ -9,8 +9,6 @@ const ResultComponent = (props) => {
              <span className="font-extrabold text-9xl">Win!</span>
              <p className="font-bold text-xl">Com Lose</p>
              </div>
-            
-           
         </div>
     )
 }
