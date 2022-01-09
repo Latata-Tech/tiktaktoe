@@ -20,6 +20,7 @@ const Play = () => {
         [null, null, null]
     ])
     const [display, setDisplay] = useState('none')
+    const [score] = useState([0,0,0])
 
     return (
         <div className="container mx-auto h-full max-h-full">
@@ -38,19 +39,19 @@ const Play = () => {
                     <div className="ml-28 mt-20">
                         <div className="grid grid-cols-1">
                             <div className="p-auto ml-28 mb-20">
-                                <BoardComponent event={setTurn} turn={turn} pawnOnBoard={pawnOnBoard} setDisPlay={setDisplay}/>
+                                <BoardComponent event={setTurn} turn={turn} pawnOnBoard={pawnOnBoard} setDisPlay={setDisplay} score={score}/>
                             </div>
                             <div className="grid grid-cols-3 gap-3">
-                                <ScoreComponent status={"Player 1" + "(" + pawn + ")"} score={0}/>
-                                <ScoreComponent status="Draw" score={0}/>
-                                <ScoreComponent status={mode === 1 ? "Computer(" + (pawn === "x" ? "o)" : "x)") : "Player 2(" + (pawn === "x" ? "o)" : "x)")} score={0}/>
+                                <ScoreComponent status={"Player 1" + "(" + pawn + ")"} score={score[1]}/>
+                                <ScoreComponent status="Draw" score={score[0]}/>
+                                <ScoreComponent status={"Player 2(" + (pawn === "x" ? "o)" : "x)")} score={score[2]}/>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <ModalComponent display={display}/>
+            <ModalComponent display={display} setDisplay={setDisplay} resetBoard={resetBoard}/>
         </div>
     )
 }

@@ -15,8 +15,11 @@ const BoardComponent = (props) => {
             let result = checkBoardPawn(index, turn === 1 ? 'x' : 'o')
             if(result === 3){
                 props.setDisPlay("block")
+                props.score[0] += 1
             }else if(result !== 0){
+                console.log(result)
                 props.setDisPlay("block")
+                props.score[turn] += 1
             }
             props.event(turn === 1 ? 2 : 1)
         }
@@ -70,7 +73,7 @@ const BoardComponent = (props) => {
         return result
     }
     return (
-        <div className="w-11/12">
+        <div className="w-11/12" id="board">
             <div onClick={handleClick} className="w-50 float-left  border-r-8 border-black border-b-8 border-black">
                 <img src={initial}  width="190px" alt="initial" data="00"/>
             </div>
