@@ -17,7 +17,6 @@ const BoardComponent = (props) => {
                 props.setDisPlay("block")
                 props.score[0] += 1
             }else if(result !== 0){
-                console.log(result)
                 props.setDisPlay("block")
                 props.score[turn] += 1
             }
@@ -59,7 +58,6 @@ const BoardComponent = (props) => {
 
     function checkDraw(){
         let result = true;
-        console.log(props.pawnOnBoard)
         for(let i = 0; i < props.pawnOnBoard.length; i++){
             for(let j = 0; j < props.pawnOnBoard[i].length; j++){
                 if(props.pawnOnBoard[i][j] === null){
@@ -69,7 +67,6 @@ const BoardComponent = (props) => {
             }
             if(result === false) break;
         }
-        console.log(result)
         return result
     }
     return (
