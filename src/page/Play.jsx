@@ -11,7 +11,7 @@ import cross from '../assets/cross.svg'
 import circle from '../assets/elipse.svg'
 
 const Play = () => {
-    const [mode, setMode] = useState(1)
+    const [mode, setMode] = useState(2)
     const [turn, setTurn] = useState(1)
     const [pawn, setPawn] = useState('x')
     const [pawnOnBoard, resetBoard] = useState([
@@ -21,6 +21,7 @@ const Play = () => {
     ])
     const [display, setDisplay] = useState('none')
     const [score] = useState([0,0,0])
+    const [winner, setWinner] = useState([])
 
     return (
         <div className="container mx-auto h-full max-h-full">
@@ -30,8 +31,8 @@ const Play = () => {
                     <div className="mt-40">
                         <ModeComponent event={setMode} mode={mode}/>
                         <div className="grid grid-cols-2 gap-2 content-center mt-10">
-                            <XOComponent image={cross} title={"x"} mode={mode} event={setPawn} pawn={pawn}/>
-                            <XOComponent image={circle} title={"o"} mode={mode} event={setPawn} pawn={pawn}/>
+                            <XOComponent image={cross} title={"x"} mode={mode} event={setPawn} pawn={pawn} turn={setTurn}/>
+                            <XOComponent image={circle} title={"o"} mode={mode} event={setPawn} pawn={pawn} turn={setTurn}/>
                         </div>
                     </div>
                 </div>
@@ -39,7 +40,10 @@ const Play = () => {
                     <div className="ml-28 mt-20">
                         <div className="grid grid-cols-1">
                             <div className="p-auto ml-28 mb-20">
-                                <BoardComponent event={setTurn} turn={turn} pawnOnBoard={pawnOnBoard} setDisPlay={setDisplay} score={score}/>
+                                <div className="ml-44 font-bold text-4xl mb-10">
+                                    {pawn === 'x' ? "Player "+ turn +" Play!" : "Player "+ turn +" Play!"}
+                                </div>
+                                <BoardComponent event={setTurn} turn={turn} pawnOnBoard={pawnOnBoard} setDisPlay={setDisplay} score={score} pawn={setPawn} winner={setWinner}/>
                             </div>
                             <div className="grid grid-cols-3 gap-3">
                                 <ScoreComponent status={"Player 1" + "(" + pawn + ")"} score={score[1]}/>
@@ -51,7 +55,7 @@ const Play = () => {
                 </div>
             </div>
 
-            <ModalComponent display={display} setDisplay={setDisplay} resetBoard={resetBoard}/>
+            <ModalComponent display={display} setDisplay={setDisplay} resetBoard={resetBoard} pawn={setPawn} turn={setTurn} winner={winner}/>
         </div>
     )
 }

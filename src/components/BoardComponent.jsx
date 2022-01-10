@@ -16,11 +16,14 @@ const BoardComponent = (props) => {
             if(result === 3){
                 props.setDisPlay("block")
                 props.score[0] += 1
+                props.winner(['x', 'o'])
             }else if(result !== 0){
                 props.setDisPlay("block")
                 props.score[turn] += 1
+                props.winner(turn === 1 ? ['x'] : ['o'])
+            }else{
+                props.event(turn === 1 ? 2 : 1)
             }
-            props.event(turn === 1 ? 2 : 1)
         }
     }
 
@@ -70,7 +73,7 @@ const BoardComponent = (props) => {
         return result
     }
     return (
-        <div className="w-11/12" id="board">
+        <div className="w-11/12 text-center" id="board">
             <div onClick={handleClick} className="w-50 float-left  border-r-8 border-black border-b-8 border-black">
                 <img src={initial}  width="190px" alt="initial" data="00"/>
             </div>

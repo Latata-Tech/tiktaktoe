@@ -2,6 +2,8 @@ import React from "react";
 import initial from '../assets/pawn/initial.svg'
 import '../style/index.css'
 import '../style/App.css'
+import cross from '../assets/pawn/cross.svg'
+import elipse from '../assets/pawn/elipse.svg'
 
 const ModalComponent = (props) => {
     function resetBoard()
@@ -18,6 +20,22 @@ const ModalComponent = (props) => {
             [null, null, null],
             [null, null, null]
         ])
+        props.pawn('x')
+        props.turn(1)
+    }
+
+    function createWinner(val)
+    {
+        if(val.length !== 0){
+            let parent = document.getElementById('container-winner')
+            parent.innerHTML = ''
+            for(let i = 0; i < val.length; i++){
+                let img = document.createElement('img')
+                img.width = 420
+                img.src = val[i] === 'x' ? cross : elipse
+                parent.appendChild(img)
+            }
+        }
     }
     return (
         
@@ -25,19 +43,20 @@ const ModalComponent = (props) => {
             <div className="flex items-end justify-center pt-10 px-4 pb-20 text-center sm:block sm:p-0 sm:h-4/5">
 
                 <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-
                 <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
                 <div className="inline-block align-bottom bg-white/80 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:w-8/12 sm:h-full">
                     <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div className="text-center">
                             <div className="mt-3 text-center">
-                                <h3 className="text-9xl leading-6 font-extrabold text-gray-900 text-center sm:mt-96" id="modal-title">
+                                <div id="container-winner" className="grid grid-cols-1 gap-1 place-items-center">
+                                    <div>{createWinner(props.winner)}</div>
+                                </div>
+                                <h3 className="text-9xl leading-6 font-extrabold text-gray-900 text-center " id="modal-title">
                                     Win!
                                 </h3>
                                 <div className="mt-20">
                                     <p className="text-sm text-gray-500">
-                                        Lose
                                     </p>
                                 </div>
                             </div>

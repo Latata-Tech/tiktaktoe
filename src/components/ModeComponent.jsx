@@ -6,7 +6,7 @@ const ModeComponent = (props) => {
     return (
         <div>
             <span className="text-base">Click to change mode</span>
-            <button onClick={() => props.event(mode === 1 ? 2 : 1)} className="bg-main-color text-white w-full rounded-lg mt-2">
+            <button onClick={() => props.event(2)} className="bg-main-color text-white w-full rounded-lg mt-2">
                 <div className="float-left">
                     <img src={mode === 1 ? person : people} alt="icon"/>
                 </div>
