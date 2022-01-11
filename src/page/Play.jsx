@@ -46,7 +46,7 @@ const Play = () => {
                                 <BoardComponent event={setTurn} turn={turn} pawnOnBoard={pawnOnBoard} setDisPlay={setDisplay} score={score} pawn={setPawn} winner={setWinner}/>
                             </div>
                             <div className="grid grid-cols-3 gap-3">
-                                <ScoreComponent status={"Player 1" + "(" + pawn + ")"} score={score[1]}/>
+                                <ScoreComponent status={`Player 1 (${pawn})`} score={score[1]}/>
                                 <ScoreComponent status="Draw" score={score[0]}/>
                                 <ScoreComponent status={"Player 2(" + (pawn === "x" ? "o)" : "x)")} score={score[2]}/>
                             </div>
