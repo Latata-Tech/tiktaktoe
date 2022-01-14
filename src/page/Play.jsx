@@ -11,6 +11,7 @@ import cross from '../assets/cross.svg'
 import circle from '../assets/elipse.svg'
 
 const Play = () => {
+
     const [mode, setMode] = useState(2)
     const [turn, setTurn] = useState(1)
     const [pawn, setPawn] = useState('x')
@@ -24,7 +25,7 @@ const Play = () => {
     const [winner, setWinner] = useState([])
 
     return (
-        <div className="container mx-auto h-full max-h-full">
+        <div className="container mx-auto h-full max-h-full px-4 md:px-8 lg:px-16">
             <div className="grid grid-cols-6 gap-4">
                 <div className="col-start-1">
                     <LogoComponent />
@@ -40,7 +41,7 @@ const Play = () => {
                     <div className="ml-28 mt-20">
                         <div className="grid grid-cols-1">
                             <div className="p-auto ml-28 mb-20">
-                                <div className="ml-44 font-bold text-4xl mb-10">
+                                <div className="ml-28 font-bold text-4xl mb-10">
                                     {pawn === 'x' ? "Player "+ turn +" Play!" : "Player "+ turn +" Play!"}
                                 </div>
                                 <BoardComponent event={setTurn} turn={turn} pawnOnBoard={pawnOnBoard} setDisPlay={setDisplay} score={score} pawn={setPawn} winner={setWinner}/>

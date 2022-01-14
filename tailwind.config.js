@@ -3,22 +3,21 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      boxShadow: {
+        'logo': '0px 4px 20px rgba(0, 0, 0, 0.25)'
+      },
       fontFamily: {
         'roboto': ['Roboto'],
-        'spartan': ['Spartan']
+        'spartan': ['Spartan'],
+        'poppins': ['Poppins'],
       },
       fontSize: {
         'xxxl': '200px'
       },
       colors: {
-        primary: '#1B1B1B',
-        secondary: '#393624',
-        black: '#000000',
-        blackTransparent: '#1b1b1bd2',
-        grey: {
-          light: '#C2C2C2',
-          dark: '#9E9E9E'
-        } 
+        primary: '#F55078',
+        secondary: '#F3A1B5',
+        black: '#263238',
       },
       zIndex: {
         '-1': '-1',

@@ -73,35 +73,35 @@ const BoardComponent = (props) => {
         return result
     }
     return (
-        <div className="w-11/12 text-center" id="board">
-            <div onClick={handleClick} className="w-50 float-left  border-r-8 border-black border-b-8 border-black">
-                <img src={initial}  width="190px" alt="initial" data="00"/>
+        <div style={{width: '25vw',height: '25vw'}} className="grid grid-cols-3 text-center" id="board">
+            <div onClick={handleClick} className="w-50 float-left border-r-8 border-black border-b-8 border-black">
+                <img src={initial} className="w-full h-full object-contain"  alt="initial" data="00"/>
             </div>
             <div onClick={handleClick} className="w-50 float-left border-r-8 border-black border-b-8 border-black">
-                <img src={initial}  width="190px" alt="initial" data="01"/>
+                <img src={initial} className="w-full h-full object-contain"  alt="initial" data="01"/>
             </div>
             <div onClick={handleClick} className="w-50 float-left  border-b-8 border-black">
-                <img src={initial}  width="190px" alt="initial" data="02"/>
+                <img src={initial} className="w-full h-full object-contain"  alt="initial" data="02"/>
             </div>
 
             <div onClick={handleClick} className="w-50 float-left  border-r-8 border-black border-b-8 border-black">
-                <img src={initial}  width="190px" alt="initial" data="10"/>
+                <img src={initial} className="w-full h-full object-contain"  alt="initial" data="10"/>
             </div>
             <div onClick={handleClick} className="w-50 float-left  border-r-8 border-black border-b-8 border-black">
-                <img src={initial}  width="190px" alt="initial" data="11"/>
+                <img src={initial} className="w-full h-full object-contain"  alt="initial" data="11"/>
             </div>
             <div onClick={handleClick} className="w-50 float-left  border-b-8 border-black">
-                <img src={initial}  width="190px" alt="initial" data="12"/>
+                <img src={initial} className="w-full h-full object-contain"  alt="initial" data="12"/>
             </div>
 
             <div onClick={handleClick} className="w-50 float-left  border-r-8 border-black">
-                <img src={initial}  width="190px" alt="initial" data="20"/>
+                <img src={initial} className="w-full h-full object-contain"  alt="initial" data="20"/>
             </div>
             <div onClick={handleClick} className="w-50 float-left  border-r-8 border-black">
-                <img src={initial}  width="190px" alt="initial" data="21"/>
+                <img src={initial} className="w-full h-full object-contain"  alt="initial" data="21"/>
             </div>
             <div onClick={handleClick} className="w-50 float-left ">
-                <img src={initial}  width="190px" alt="initial" data="22"/>
+                <img src={initial} className="w-full h-full object-contain"  alt="initial" data="22"/>
             </div>
         </div>
     )

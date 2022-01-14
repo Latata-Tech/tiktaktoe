@@ -6,6 +6,8 @@ import cross from '../assets/pawn/cross.svg'
 import elipse from '../assets/pawn/elipse.svg'
 
 const ModalComponent = (props) => {
+
+    
     function resetBoard()
     {
         let board = document.getElementById('board').children;
@@ -40,12 +42,12 @@ const ModalComponent = (props) => {
     return (
         
         <div className="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" style={{display: props.display}}>
-            <div className="flex items-end justify-center pt-10 px-4 pb-20 text-center sm:block sm:p-0 sm:h-4/5">
+            <div className=" pb-8 flex items-end justify-center pt-10 px-4 pb-20 text-center sm:block sm:p-0 sm:h-4/5">
 
                 <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
                 <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
-                <div className="inline-block align-bottom bg-white/80 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:w-8/12 sm:h-full">
+                <div className="pb-8 inline-block align-bottom bg-white/80 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:align-middle sm:w-8/12 sm:h-full">
                     <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div className="text-center">
                             <div className="mt-3 text-center">
@@ -62,7 +64,7 @@ const ModalComponent = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="px-4 py-3 sm:px-6 flex justify-center mx-auto ">
+                    <div className="px-4 py-3 sm:px-6 flex justify-center mx-auto mb-8">
                         <button onClick={()=> resetBoard()} type="button" className="inline-flex w-96 rounded-md border border-transparent shadow-sm px-6 py-5 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 justify-center">
                             Restart The Game
                         </button>
